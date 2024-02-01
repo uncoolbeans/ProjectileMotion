@@ -9,7 +9,7 @@ def switchToNewScreen(oldFrame,newFrame): #general purpose switch screen functio
     oldFrame.forget()
     newFrame.pack()
     return
-screen3 = None #a9huawho
+screen3 = None 
 
 class App(ctk.CTk):
     def __init__(self):
