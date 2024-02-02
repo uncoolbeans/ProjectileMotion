@@ -209,7 +209,38 @@ class simulator(ctk.CTkFrame):
 
         fig, ax = plt.subplots()
         ax.plot(x,y)
+        plt.title('Projectile arc')
         plt.show()
+        
+        self.simulatorLabel = ctk.CTkLabel(self, 
+                                        text = 'Simulation complete!',
+                                        fg_color= 'transparent', 
+                                        anchor= 'center', 
+                                        font = ("Bahnschrift SemiBold",30),
+                                        padx = 10, pady=50)
+        self.simulatorLabel.grid(row = 0, column = 0)
+
+        self.parametersFrame = ctk.CTkFrame(self)
+        self.uxFrame = ctk.CTkFrame(self.parametersFrame)
+        uxIndicator = ctk.CTkLabel(self.uxFrame, 
+                                   text = 'Horizontal Velocity')
+        uxValue = ctk.CTkLabel(self.uxFrame,
+                               text = str(ux))
+        uxIndicator.pack()
+        uxValue.pack()
+        self.uxFrame.pack()
+
+        self.uyFrame = ctk.CTkFrame(self.parametersFrame)
+        uyIndicator = ctk.CTkLabel(self.uyFrame, 
+                                   text = 'Horizontal Velocity')
+        uyValue = ctk.CTkLabel(self.uyFrame,
+                               text = str(uy))
+        uyIndicator.pack()
+        uyValue.pack()
+        self.uyFrame.pack()
+
+        self.parametersFrame.grid(row = 1, column = 0)
+
 
 
 app = App()
